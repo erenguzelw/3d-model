@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trilocale Milano — 3D Ev Turu</title>
+    <meta name="description" content="Milano'daki üç odalı daireyi scroll ile gezin, eşyalara yakından bakın." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 15 16 5l12 10v12H4z' fill='%23c2552d'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Dairenin 3D modeli"></canvas>
+    <div id="pins" aria-hidden="true"></div>
+
+    <div id="loader">
+      <div class="loader-inner">
+        <p class="eyebrow">Trilocale · Via Boncompagni</p>
+        <h1>Daire yükleniyor</h1>
+        <div class="bar"><span id="loader-bar"></span></div>
+        <p id="loader-text">0%</p>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#" data-stop="0">Trilocale <em>Milano</em></a>
+      <nav id="dots" aria-label="Odalar"></nav>
+      <button id="mode-toggle" class="btn" type="button">Serbest gez</button>
+    </header>
+
+    <!-- Kaydırma alanı: her durak için bir bölüm -->
+    <main id="tour"></main>
+
+    <section id="stop-card" class="card" aria-live="polite">
+      <p class="eyebrow" id="stop-index"></p>
+      <h2 id="stop-title"></h2>
+      <p id="stop-desc"></p>
+    </section>
+
+    <aside id="items" class="panel">
+      <h3 id="items-title">Eşyalar</h3>
+      <ul id="items-list"></ul>
+    </aside>
+
+    <section id="info" class="card info" hidden>
+      <p class="eyebrow" id="info-room"></p>
+      <h2 id="info-title"></h2>
+      <p id="info-desc"></p>
+      <div class="info-actions">
+        <button id="info-back" class="btn" type="button">← Geri</button>
+        <span class="hint">Sürükle: etrafında dön · Tekerlek: yakınlaş</span>
+      </div>
+    </section>
+
+    <div id="scroll-hint">Kaydırarak içeri girin ↓</div>
+
+    <footer class="credit">
+      Model: <a href="https://sketchfab.com/3d-models/trilocale-via-boncompagni-milano-dd261cf6c2e647cab915f015230bb15e" target="_blank" rel="noopener">"Trilocale Via Boncompagni Milano"</a>
+      — <a href="https://sketchfab.com/FabioSiccardi" target="_blank" rel="noopener">Fabio Siccardi</a>,
+      <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY-4.0</a>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

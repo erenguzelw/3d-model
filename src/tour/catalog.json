@@ -1,0 +1,44 @@
+{
+  "rooms": [
+    { "id": "salon", "name": "Salon", "desc": "Doğu cephesine bakan oturma alanı: yeşil kumaş kanepe, karşısında TV duvarı ve siyah metal kitaplık." },
+    { "id": "mutfak", "name": "Mutfak & Yemek", "desc": "Salona açılan koridor tipi mutfak: ankastre ocak, evye ve fırın kolonu. Hemen önünde yuvarlak halı üzerinde yemek masası." },
+    { "id": "antre", "name": "Antre", "desc": "Banyolara ve yatak odalarına bağlanan koridor; nişte çamaşır makinesi ve raflar, sağda salona açılan kapı." },
+    { "id": "banyo1", "name": "Banyo", "desc": "Asma lavabo, aynalı dolap, cam duşakabin, klozet ve bide." },
+    { "id": "banyo2", "name": "İkinci Banyo", "desc": "Birinci banyonun simetriği; mozaik zemin ve krom armatürler." },
+    { "id": "yatak1", "name": "Yatak Odası", "desc": "Pencere önünde tek kişilik yatak, boydan gömme gardırop ve çalışma köşesi." },
+    { "id": "yatak2", "name": "Çocuk Odası", "desc": "Pencere önünde tek kişilik yatak, boydan gardırop ve sandalyeli çalışma masası." }
+  ],
+  "items": [
+    { "id": "kanepe", "name": "Kanepe", "room": "salon", "desc": "Dokulu yeşil kumaş kaplı, üç kişilik geniş kanepe.", "clusters": ["c47"] },
+    { "id": "televizyon", "name": "Televizyon", "room": "salon", "desc": "Mutfak bölmesine monte, kanepeye bakan düz ekran TV.", "clusters": ["c41"] },
+    { "id": "tv-unitesi", "name": "TV Ünitesi", "room": "salon", "desc": "Metal detaylı, alçak ve uzun meşe TV sehpası.", "clusters": ["c43", "c44"] },
+    { "id": "duvar-raflari", "name": "Duvar Rafları", "room": "salon", "desc": "TV'nin çevresini saran beyaz meşe raf sistemi.", "clusters": ["c42"] },
+    { "id": "kitaplik", "name": "Metal Kitaplık", "room": "salon", "desc": "Kanepenin yanında, pirinç detaylı siyah metal açık raf sistemi.", "clusters": ["c48"] },
+    { "id": "vestiyer", "name": "Vestiyer Dolabı", "room": "salon", "desc": "Giriş kapısının yanında, boydan beyaz meşe vestiyer dolabı.", "clusters": ["c45"] },
+    { "id": "giris-kapisi", "name": "Giriş Kapısı", "room": "salon", "desc": "Ceviz kaplama, alüminyum detaylı daire giriş kapısı.", "clusters": ["c49", "c50"] },
+
+    { "id": "mutfak-tezgahi", "name": "Mutfak Tezgâhı", "room": "mutfak", "desc": "Ankastre fırın, ocak ve davlumbazlı beyaz mutfak tezgâhı ile üst dolaplar.", "clusters": ["c34", "c40"], "view": { "cam": [0.45, 1.7, 0.55], "target": [1.4, 0.85, -1.9], "fov": 58 } },
+    { "id": "evye-buzdolabi", "name": "Evye ve Buzdolabı", "room": "mutfak", "desc": "Antrasit granit evye, siyah kuğu boyun batarya ve yanında boy buzdolabı.", "clusters": ["c38"], "view": { "cam": [0.4, 1.65, -1.95], "target": [1.55, 0.9, -0.4], "fov": 58 } },
+    { "id": "yemek-masasi", "name": "Yemek Masası", "room": "mutfak", "desc": "Beton tablalı yuvarlak masa, zeytin yeşili deri oturaklı sandalyeler ve altında yuvarlak halı.", "clusters": ["c33", "c32", "c36"] },
+    { "id": "duvar-dolaplari", "name": "Duvar Dolapları", "room": "mutfak", "desc": "Yemek alanının duvarında, cam detaylı iki asma dolap.", "clusters": ["c37", "c39"] },
+
+    { "id": "camasir-makinesi", "name": "Çamaşır Makinesi", "room": "antre", "desc": "Antredeki nişe yerleştirilmiş önden yüklemeli çamaşır makinesi ve üstündeki iki raf.", "clusters": ["c25", "c29", "c30"] },
+
+    { "id": "lavabo-1", "name": "Lavabo ve Ayna", "room": "banyo1", "desc": "Seramik kaplı duvarda asma lavabo, krom batarya ve ayna.", "clusters": ["c15"], "view": { "cam": [-0.5, 1.55, -2.3], "target": [-1.6, 1.05, -2.0], "fov": 60 } },
+    { "id": "dus-1", "name": "Duşakabin", "room": "banyo1", "desc": "Gri cam panelli duşakabin.", "clusters": ["c24"], "view": { "cam": [-1.5, 1.8, -2.95], "target": [-0.4, 0.55, -1.35], "fov": 62 } },
+    { "id": "klozet-1", "name": "Klozet ve Bide", "room": "banyo1", "desc": "Asma klozet ve bataryalı bide.", "clusters": ["c22", "c23"] },
+
+    { "id": "lavabo-2", "name": "Lavabo ve Ayna", "room": "banyo2", "desc": "Asma lavabo, krom batarya ve ayna.", "clusters": ["c16"], "view": { "cam": [-0.5, 1.55, 2.3], "target": [-1.6, 1.05, 2.0], "fov": 60 } },
+    { "id": "dus-2", "name": "Duşakabin", "room": "banyo2", "desc": "Gri cam panelli duşakabin.", "clusters": ["c17"], "view": { "cam": [-0.45, 1.7, 1.75], "target": [-1.35, 1.0, 2.95], "fov": 60 } },
+    { "id": "klozet-2", "name": "Klozet ve Bide", "room": "banyo2", "desc": "Asma klozet ve bataryalı bide.", "clusters": ["c26", "c27"] },
+
+    { "id": "yatak-1", "name": "Tek Kişilik Yatak", "room": "yatak1", "desc": "Mavi tonlarında örtülü tek kişilik yatak.", "clusters": ["c3"] },
+    { "id": "gardirop-1", "name": "Gömme Gardırop", "room": "yatak1", "desc": "Boydan, beyaz meşe kapaklı gömme gardırop.", "clusters": ["c11"] },
+    { "id": "calisma-1", "name": "Çalışma Köşesi", "room": "yatak1", "desc": "Çalışma masası, çekmeceli ünite ve kumaş döşemeli sandalye.", "clusters": ["c2"] },
+
+    { "id": "yatak-2", "name": "Tek Kişilik Yatak", "room": "yatak2", "desc": "Mavi tonlarında örtülü tek kişilik yatak.", "clusters": ["c10"] },
+    { "id": "gardirop-2", "name": "Gardırop", "room": "yatak2", "desc": "Beyaz meşe kapaklı gardırop.", "clusters": ["c4"] },
+    { "id": "calisma-2", "name": "Çalışma Masası", "room": "yatak2", "desc": "Çekmeceli çalışma masası ve kumaş döşemeli sandalye.", "clusters": ["c7", "c8"] }
+  ]
+}
+

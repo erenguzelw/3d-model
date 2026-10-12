@@ -1,0 +1,191 @@
+:root {
+  --scene-bg: #ece6dc;
+  --ink: #23201c;
+  --ink-soft: #6b645b;
+  --paper: rgba(250, 247, 242, 0.86);
+  --line: rgba(35, 32, 28, 0.12);
+  --accent: #c2552d;
+  --accent-soft: #f3d9cc;
+  --radius: 14px;
+  --shadow: 0 10px 40px rgba(40, 30, 20, 0.14);
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scrollbar-gutter: stable; }
+html.locked { overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--scene-bg);
+  color: var(--ink);
+  font: 15px/1.55 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+button { font: inherit; color: inherit; cursor: pointer; }
+a { color: inherit; }
+
+#scene { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; outline: none; }
+
+/* Kaydırma alanı: görünmez, yalnızca uzunluk sağlar */
+#tour { position: relative; z-index: 1; pointer-events: none; }
+.stop-space { height: 140vh; }
+.stop-space:last-child { height: 100vh; }
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn:hover { background: #fff; border-color: rgba(35, 32, 28, 0.25); }
+
+/* ---------------------------------------------------------------- üst bar */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 24px;
+  pointer-events: none;
+}
+.topbar > * { pointer-events: auto; }
+.brand { font: 600 20px var(--serif); text-decoration: none; letter-spacing: -0.01em; }
+.brand em { font-weight: 400; color: var(--ink-soft); }
+#dots { display: flex; gap: 10px; padding: 8px 14px; border-radius: 999px; background: var(--paper); backdrop-filter: blur(10px); border: 1px solid var(--line); }
+#dots button {
+  width: 9px; height: 9px; padding: 0; border-radius: 50%;
+  border: 0; background: rgba(35, 32, 28, 0.22);
+  transition: transform 0.25s, background 0.25s;
+}
+#dots button:hover { background: var(--ink-soft); }
+#dots button.active { background: var(--accent); transform: scale(1.35); }
+
+/* ------------------------------------------------------------------ kartlar */
+.card {
+  position: fixed; left: 24px; bottom: 56px; z-index: 5;
+  width: min(400px, calc(100vw - 32px));
+  padding: 22px 24px;
+  background: var(--paper);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card h2 { margin: 0 0 8px; font: 600 30px/1.1 var(--serif); letter-spacing: -0.015em; }
+.card p { margin: 0; color: var(--ink-soft); }
+#stop-card { opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity 0.45s, transform 0.45s; }
+#stop-card.visible { opacity: 1; transform: none; }
+.info { animation: rise 0.4s ease-out; }
+.info[hidden] { display: none; }
+.info-actions { display: flex; align-items: center; gap: 14px; margin-top: 16px; flex-wrap: wrap; }
+.hint { font-size: 12px; color: var(--ink-soft); }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+
+/* ------------------------------------------------------------ eşya paneli */
+.panel {
+  position: fixed; right: 24px; top: 76px; z-index: 5;
+  width: 260px; max-height: calc(100vh - 150px); overflow: auto;
+  padding: 14px;
+  background: var(--paper);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.panel h3 { margin: 2px 6px 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+.panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.panel li button {
+  width: 100%; display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+  padding: 8px 10px; border: 0; border-radius: 9px; background: transparent; text-align: left;
+  transition: background 0.15s;
+}
+.panel li button:hover { background: rgba(35, 32, 28, 0.06); }
+.panel li button.current { background: var(--accent-soft); }
+.panel li small { color: var(--ink-soft); font-size: 11px; white-space: nowrap; }
+
+/* ---------------------------------------------------------------- pinler */
+#pins { position: fixed; inset: 0; z-index: 3; pointer-events: none; }
+.pin {
+  position: absolute; left: 0; top: 0;
+  display: flex; align-items: center; gap: 8px;
+  margin: -9px 0 0 -9px; padding: 0; border: 0; background: none;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.pin.visible { opacity: 1; pointer-events: auto; }
+.pin-dot {
+  width: 18px; height: 18px; border-radius: 50%;
+  background: #fff; border: 5px solid var(--accent);
+  box-shadow: 0 0 0 0 rgba(194, 85, 45, 0.5);
+  animation: pulse 2.2s infinite;
+}
+.pin-label {
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--paper); backdrop-filter: blur(8px); border: 1px solid var(--line);
+  font-size: 12px; font-weight: 500; white-space: nowrap;
+  opacity: 0; transform: translateX(-6px); transition: opacity 0.2s, transform 0.2s;
+}
+.pin:hover .pin-label, .pin:focus-visible .pin-label { opacity: 1; transform: none; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 10px rgba(194, 85, 45, 0); } 100% { box-shadow: 0 0 0 0 rgba(194, 85, 45, 0); } }
+
+/* ---------------------------------------------------------------- diğer */
+#scroll-hint {
+  position: fixed; left: 50%; bottom: 22px; z-index: 4; transform: translateX(-50%);
+  font-size: 13px; color: var(--ink-soft); transition: opacity 0.4s;
+  animation: bob 2s ease-in-out infinite;
+}
+#scroll-hint.hidden { opacity: 0; }
+@keyframes bob { 50% { transform: translate(-50%, 5px); } }
+
+.credit {
+  position: fixed; right: 24px; bottom: 14px; z-index: 4;
+  font-size: 11px; color: var(--ink-soft);
+}
+
+body[data-mode='focus'] #stop-card { display: none; }
+
+#loader {
+  position: fixed; inset: 0; z-index: 50;
+  display: grid; place-items: center;
+  background: var(--scene-bg);
+  transition: opacity 0.8s, visibility 0.8s;
+}
+#loader.done { opacity: 0; visibility: hidden; }
+.loader-inner { width: min(320px, 80vw); text-align: center; }
+.loader-inner h1 { margin: 0 0 18px; font: 600 28px var(--serif); }
+.bar { height: 3px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.2s; }
+#loader-text { margin: 10px 0 0; font-size: 12px; color: var(--ink-soft); }
+
+/* ---------------------------------------------------------------- mobil */
+@media (max-width: 760px) {
+  .topbar { padding: 12px 16px; }
+  .brand { font-size: 17px; }
+  #dots { display: none; }
+  .card { left: 16px; bottom: 96px; padding: 16px 18px; }
+  .card h2 { font-size: 24px; }
+  .panel {
+    top: auto; bottom: 34px; left: 16px; right: 16px; width: auto;
+    padding: 8px; max-height: none; overflow-x: auto;
+  }
+  .panel h3 { display: none; }
+  .panel ul { display: flex; gap: 6px; }
+  .panel li button { white-space: nowrap; background: rgba(35, 32, 28, 0.05); }
+  .panel li small { display: none; }
+  .credit {
+    left: 16px; right: 16px; bottom: 8px; text-align: center; font-size: 10px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  #scroll-hint { display: none; }
+}

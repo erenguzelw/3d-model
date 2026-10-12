@@ -1,0 +1,539 @@
+{
+  "bounds": {
+    "min": [
+      -5.539,
+      -0.278,
+      -3.621
+    ],
+    "max": [
+      5.539,
+      2.44,
+      3.621
+    ]
+  },
+  "rooms": [
+    {
+      "id": "salon",
+      "name": "Salon",
+      "desc": "Doğu cephesine bakan oturma alanı: yeşil kumaş kanepe, karşısında TV duvarı ve siyah metal kitaplık."
+    },
+    {
+      "id": "mutfak",
+      "name": "Mutfak & Yemek",
+      "desc": "Salona açılan koridor tipi mutfak: ankastre ocak, evye ve fırın kolonu. Hemen önünde yuvarlak halı üzerinde yemek masası."
+    },
+    {
+      "id": "antre",
+      "name": "Antre",
+      "desc": "Banyolara ve yatak odalarına bağlanan koridor; nişte çamaşır makinesi ve raflar, sağda salona açılan kapı."
+    },
+    {
+      "id": "banyo1",
+      "name": "Banyo",
+      "desc": "Asma lavabo, aynalı dolap, cam duşakabin, klozet ve bide."
+    },
+    {
+      "id": "banyo2",
+      "name": "İkinci Banyo",
+      "desc": "Birinci banyonun simetriği; mozaik zemin ve krom armatürler."
+    },
+    {
+      "id": "yatak1",
+      "name": "Yatak Odası",
+      "desc": "Pencere önünde tek kişilik yatak, boydan gömme gardırop ve çalışma köşesi."
+    },
+    {
+      "id": "yatak2",
+      "name": "Çocuk Odası",
+      "desc": "Pencere önünde tek kişilik yatak, boydan gardırop ve sandalyeli çalışma masası."
+    }
+  ],
+  "items": [
+    {
+      "id": "kanepe",
+      "name": "Kanepe",
+      "room": "salon",
+      "desc": "Dokulu yeşil kumaş kaplı, üç kişilik geniş kanepe.",
+      "center": [
+        4.705,
+        0.424,
+        -0.795
+      ],
+      "size": [
+        1.017,
+        0.843,
+        2.41
+      ],
+      "radius": 1.374
+    },
+    {
+      "id": "televizyon",
+      "name": "Televizyon",
+      "room": "salon",
+      "desc": "Mutfak bölmesine monte, kanepeye bakan düz ekran TV.",
+      "center": [
+        2.087,
+        0.965,
+        -0.519
+      ],
+      "size": [
+        0.227,
+        0.79,
+        1.23
+      ],
+      "radius": 0.74
+    },
+    {
+      "id": "tv-unitesi",
+      "name": "TV Ünitesi",
+      "room": "salon",
+      "desc": "Metal detaylı, alçak ve uzun meşe TV sehpası.",
+      "center": [
+        2.224,
+        0.277,
+        -0.964
+      ],
+      "size": [
+        0.5,
+        0.55,
+        2.6
+      ],
+      "radius": 1.352
+    },
+    {
+      "id": "duvar-raflari",
+      "name": "Duvar Rafları",
+      "room": "salon",
+      "desc": "TV'nin çevresini saran beyaz meşe raf sistemi.",
+      "center": [
+        2.133,
+        1.312,
+        -1.379
+      ],
+      "size": [
+        0.319,
+        1.52,
+        2.38
+      ],
+      "radius": 1.421
+    },
+    {
+      "id": "kitaplik",
+      "name": "Metal Kitaplık",
+      "room": "salon",
+      "desc": "Kanepenin yanında, pirinç detaylı siyah metal açık raf sistemi.",
+      "center": [
+        4.954,
+        1.003,
+        1.231
+      ],
+      "size": [
+        0.469,
+        2,
+        1
+      ],
+      "radius": 1.142
+    },
+    {
+      "id": "vestiyer",
+      "name": "Vestiyer Dolabı",
+      "room": "salon",
+      "desc": "Giriş kapısının yanında, boydan beyaz meşe vestiyer dolabı.",
+      "center": [
+        3.588,
+        1.153,
+        3.244
+      ],
+      "size": [
+        1.2,
+        2.3,
+        0.455
+      ],
+      "radius": 1.317
+    },
+    {
+      "id": "giris-kapisi",
+      "name": "Giriş Kapısı",
+      "room": "salon",
+      "desc": "Ceviz kaplama, alüminyum detaylı daire giriş kapısı.",
+      "center": [
+        5.348,
+        1.076,
+        2.511
+      ],
+      "size": [
+        0.381,
+        2.191,
+        1.064
+      ],
+      "radius": 1.233
+    },
+    {
+      "id": "mutfak-tezgahi",
+      "name": "Mutfak Tezgâhı",
+      "room": "mutfak",
+      "desc": "Ankastre fırın, ocak ve davlumbazlı beyaz mutfak tezgâhı ile üst dolaplar.",
+      "center": [
+        1.082,
+        1.128,
+        -1.561
+      ],
+      "size": [
+        1.583,
+        2.25,
+        2.415
+      ],
+      "radius": 1.83,
+      "view": {
+        "cam": [
+          0.45,
+          1.7,
+          0.55
+        ],
+        "target": [
+          1.4,
+          0.85,
+          -1.9
+        ],
+        "fov": 58
+      }
+    },
+    {
+      "id": "evye-buzdolabi",
+      "name": "Evye ve Buzdolabı",
+      "room": "mutfak",
+      "desc": "Antrasit granit evye, siyah kuğu boyun batarya ve yanında boy buzdolabı.",
+      "center": [
+        1.574,
+        0.887,
+        -0.424
+      ],
+      "size": [
+        0.6,
+        1.769,
+        1.35
+      ],
+      "radius": 1.152,
+      "view": {
+        "cam": [
+          0.4,
+          1.65,
+          -1.95
+        ],
+        "target": [
+          1.55,
+          0.9,
+          -0.4
+        ],
+        "fov": 58
+      }
+    },
+    {
+      "id": "yemek-masasi",
+      "name": "Yemek Masası",
+      "room": "mutfak",
+      "desc": "Beton tablalı yuvarlak masa, zeytin yeşili deri oturaklı sandalyeler ve altında yuvarlak halı.",
+      "center": [
+        1.224,
+        0.394,
+        2.341
+      ],
+      "size": [
+        1.9,
+        0.784,
+        1.9
+      ],
+      "radius": 1.399
+    },
+    {
+      "id": "duvar-dolaplari",
+      "name": "Duvar Dolapları",
+      "room": "mutfak",
+      "desc": "Yemek alanının duvarında, cam detaylı iki asma dolap.",
+      "center": [
+        1.33,
+        1.853,
+        3.186
+      ],
+      "size": [
+        1.617,
+        0.7,
+        0.27
+      ],
+      "radius": 0.891
+    },
+    {
+      "id": "camasir-makinesi",
+      "name": "Çamaşır Makinesi",
+      "room": "antre",
+      "desc": "Antredeki nişe yerleştirilmiş önden yüklemeli çamaşır makinesi ve üstündeki iki raf.",
+      "center": [
+        -0.226,
+        0.887,
+        -0.419
+      ],
+      "size": [
+        0.6,
+        1.769,
+        0.96
+      ],
+      "radius": 1.05
+    },
+    {
+      "id": "lavabo-1",
+      "name": "Lavabo ve Ayna",
+      "room": "banyo1",
+      "desc": "Seramik kaplı duvarda asma lavabo, krom batarya ve ayna.",
+      "center": [
+        -1.609,
+        1.153,
+        -2.017
+      ],
+      "size": [
+        0.435,
+        1.9,
+        0.99
+      ],
+      "radius": 1.093,
+      "view": {
+        "cam": [
+          -0.5,
+          1.55,
+          -2.3
+        ],
+        "target": [
+          -1.6,
+          1.05,
+          -2
+        ],
+        "fov": 60
+      }
+    },
+    {
+      "id": "dus-1",
+      "name": "Duşakabin",
+      "room": "banyo1",
+      "desc": "Gri cam panelli duşakabin.",
+      "center": [
+        -0.374,
+        1.103,
+        -1.439
+      ],
+      "size": [
+        0.9,
+        2.2,
+        0.88
+      ],
+      "radius": 1.267,
+      "view": {
+        "cam": [
+          -1.5,
+          1.8,
+          -2.95
+        ],
+        "target": [
+          -0.4,
+          0.55,
+          -1.35
+        ],
+        "fov": 62
+      }
+    },
+    {
+      "id": "klozet-1",
+      "name": "Klozet ve Bide",
+      "room": "banyo1",
+      "desc": "Asma klozet ve bataryalı bide.",
+      "center": [
+        -0.622,
+        0.228,
+        -2.714
+      ],
+      "size": [
+        0.531,
+        0.45,
+        0.909
+      ],
+      "radius": 0.572
+    },
+    {
+      "id": "lavabo-2",
+      "name": "Lavabo ve Ayna",
+      "room": "banyo2",
+      "desc": "Asma lavabo, krom batarya ve ayna.",
+      "center": [
+        -1.609,
+        1.153,
+        2.006
+      ],
+      "size": [
+        0.435,
+        1.9,
+        0.89
+      ],
+      "radius": 1.071,
+      "view": {
+        "cam": [
+          -0.5,
+          1.55,
+          2.3
+        ],
+        "target": [
+          -1.6,
+          1.05,
+          2
+        ],
+        "fov": 60
+      }
+    },
+    {
+      "id": "dus-2",
+      "name": "Duşakabin",
+      "room": "banyo2",
+      "desc": "Gri cam panelli duşakabin.",
+      "center": [
+        -1.346,
+        1.103,
+        2.926
+      ],
+      "size": [
+        0.96,
+        2.2,
+        0.81
+      ],
+      "radius": 1.267,
+      "view": {
+        "cam": [
+          -0.45,
+          1.7,
+          1.75
+        ],
+        "target": [
+          -1.35,
+          1,
+          2.95
+        ],
+        "fov": 60
+      }
+    },
+    {
+      "id": "klozet-2",
+      "name": "Klozet ve Bide",
+      "room": "banyo2",
+      "desc": "Asma klozet ve bataryalı bide.",
+      "center": [
+        -0.188,
+        0.228,
+        2.357
+      ],
+      "size": [
+        0.536,
+        0.45,
+        1.149
+      ],
+      "radius": 0.673
+    },
+    {
+      "id": "yatak-1",
+      "name": "Tek Kişilik Yatak",
+      "room": "yatak1",
+      "desc": "Mavi tonlarında örtülü tek kişilik yatak.",
+      "center": [
+        -4.635,
+        0.45,
+        -2.294
+      ],
+      "size": [
+        1.07,
+        0.425,
+        1.913
+      ],
+      "radius": 1.116
+    },
+    {
+      "id": "gardirop-1",
+      "name": "Gömme Gardırop",
+      "room": "yatak1",
+      "desc": "Boydan, beyaz meşe kapaklı gömme gardırop.",
+      "center": [
+        -2.212,
+        1.054,
+        -1.988
+      ],
+      "size": [
+        0.572,
+        2.102,
+        1.985
+      ],
+      "radius": 1.474
+    },
+    {
+      "id": "calisma-1",
+      "name": "Çalışma Köşesi",
+      "room": "yatak1",
+      "desc": "Çalışma masası, çekmeceli ünite ve kumaş döşemeli sandalye.",
+      "center": [
+        -4.843,
+        0.377,
+        -0.339
+      ],
+      "size": [
+        0.727,
+        0.75,
+        1.12
+      ],
+      "radius": 0.766
+    },
+    {
+      "id": "yatak-2",
+      "name": "Tek Kişilik Yatak",
+      "room": "yatak2",
+      "desc": "Mavi tonlarında örtülü tek kişilik yatak.",
+      "center": [
+        -2.702,
+        0.45,
+        2.327
+      ],
+      "size": [
+        1.07,
+        0.425,
+        1.913
+      ],
+      "radius": 1.116
+    },
+    {
+      "id": "gardirop-2",
+      "name": "Gardırop",
+      "room": "yatak2",
+      "desc": "Beyaz meşe kapaklı gardırop.",
+      "center": [
+        -4.311,
+        1.054,
+        0.606
+      ],
+      "size": [
+        1.654,
+        2.102,
+        0.57
+      ],
+      "radius": 1.367
+    },
+    {
+      "id": "calisma-2",
+      "name": "Çalışma Masası",
+      "room": "yatak2",
+      "desc": "Çekmeceli çalışma masası ve kumaş döşemeli sandalye.",
+      "center": [
+        -4.318,
+        0.377,
+        2.902
+      ],
+      "size": [
+        0.973,
+        0.75,
+        0.839
+      ],
+      "radius": 0.744
+    }
+  ]
+}
